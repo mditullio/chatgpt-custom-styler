@@ -5,28 +5,28 @@
     document.addEventListener('readystatechange', () => {
 
         /** @type HTMLDivElement */
-        const leftColumn = document.querySelector('div.flex-shrink-0.overflow-x-hidden.bg-token-sidebar-surface-primary');
+        const sidebar = document.querySelector('div.flex-shrink-0.overflow-x-hidden.bg-token-sidebar-surface-primary');
 
-        if (leftColumn) {
+        if (sidebar) {
             /** @type MutationObserverInit */
             const observerConfig = {
                 attributes: true,
                 attributeFilter: ['style'],
             };
 
-            const setLeftColumnWidth = () => {
-                if (leftColumn.style.width == '260px') {
-                    leftColumn.style.width = '400px';
+            const setSidebarWidth = () => {
+                if (sidebar.style.width == '260px') {
+                    sidebar.style.width = '400px';
 
                     /** @type HTMLDivElement */
-                    const chatHistory = leftColumn.firstChild;
+                    const chatHistory = sidebar.firstChild;
                     chatHistory.classList.remove('w-[260px]');
                 }
             }
 
-            setLeftColumnWidth();
-            const observer = new MutationObserver(setLeftColumnWidth);
-            observer.observe(leftColumn, observerConfig);
+            setSidebarWidth();
+            const observer = new MutationObserver(setSidebarWidth);
+            observer.observe(sidebar, observerConfig);
         }
 
     });
