@@ -39,17 +39,13 @@ The extension injects a content script that runs whenever you visit the ChatGPT 
 
 - **Adjust Sidebar Width:**
 
-  - To change the sidebar width, modify the `leftColumn.style.width` value in `content.js`.
-
-- **Modify Delay:**
-
-  - If the styles are not applied consistently, you may need to adjust the delay duration in the `setTimeout` function.
+  - To change the sidebar width, modify the `sidebar.style.width` value in `content.js`.
 
 ## Code Explanation
 
 The `content.js` script adjusts the width of the left sidebar on the ChatGPT page:
 
-- **Event Listener:** The script waits for the document's ready state to change, then uses a `setTimeout` to ensure all elements are loaded.
+- **Event Listener:** The script waits for the document's ready state to change, then uses a `MutationObserver` to ensure styles are reapplied when mutations occur.
 - **Element Selection:** It selects the sidebar using specific class names. If the ChatGPT website updates its classes, you may need to adjust this selector in `content.js`.
 - **Style Modification:** Sets the sidebar's width to `400px` and removes a class that restricts the width.
 
