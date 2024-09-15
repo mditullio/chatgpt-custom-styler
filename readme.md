@@ -4,7 +4,7 @@ This Chrome extension modifies the ChatGPT interface by adjusting the width of t
 
 ## How It Works
 
-The extension injects a content script that runs whenever you visit the ChatGPT website. The script selects the left sidebar element and changes its width to `400px`. It also removes a CSS class that sets a fixed width, ensuring the new width is applied.
+The extension injects a content script that runs whenever you visit the ChatGPT website. The script selects the left sidebar element and changes its width to `400px`. It also removes a CSS class that sets a fixed width, ensuring the new width is applied. The script also reacts to changes on the left column bar attributes, in order to reapply the desired width.
 
 ## Installation
 
