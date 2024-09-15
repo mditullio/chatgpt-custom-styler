@@ -3,18 +3,17 @@
 (function () {
 
     document.addEventListener('readystatechange', () => {
-        
-        setTimeout(() => {
 
-            /** @type HTMLDivElement */
-            const leftColumn = document.querySelector('div.flex-shrink-0.overflow-x-hidden.bg-token-sidebar-surface-primary');
+        /** @type HTMLDivElement */
+        const leftColumn = document.querySelector('div.flex-shrink-0.overflow-x-hidden.bg-token-sidebar-surface-primary');
 
+        if (leftColumn) {
             /** @type MutationObserverInit */
             const observerConfig = {
                 attributes: true,
                 attributeFilter: ['style'],
             };
-        
+
             const setLeftColumnWidth = () => {
                 if (leftColumn.style.width == '260px') {
                     leftColumn.style.width = '400px';
@@ -25,13 +24,11 @@
                 }
             }
 
-            if (leftColumn) {
-                setLeftColumnWidth();    
-                const observer = new MutationObserver(setLeftColumnWidth);
-                observer.observe(leftColumn, observerConfig);                
-            }           
+            setLeftColumnWidth();
+            const observer = new MutationObserver(setLeftColumnWidth);
+            observer.observe(leftColumn, observerConfig);
+        }
 
-        }, 500);
     });
 
 })();

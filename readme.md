@@ -59,10 +59,6 @@ The `content.js` script adjusts the width of the left sidebar on the ChatGPT pag
 
   - Be aware that the ChatGPT website may update its class names or structure. If the extension stops working, you may need to update the selectors in `content.js` to match the new class names.
 
-- **Adjusting the Delay:**
-
-  - If the sidebar isn't modified as expected, you might need to adjust the `setTimeout` duration to wait longer for the elements to load, especially if you have a slow internet connection.
-
 - **Further Customization:**
 
   - You can modify `content.js` to adjust other elements or styles on the page according to your needs.
