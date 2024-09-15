@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "ChatGPT Custom Styler",
+    "version": "1.0",
+    "description": "Injects custom CSS styles into the ChatGPT page.",
+    "permissions": [],
+    "content_scripts": [
+      {
+        "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  
